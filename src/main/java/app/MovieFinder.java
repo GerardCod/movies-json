@@ -53,10 +53,14 @@ public class MovieFinder implements MovieReader {
      * @param movies the list of movies.
      */
     private void showTitles(JSONArray movies) {
-        for (Object movie : movies) {
-            JSONObject movieObject = (JSONObject) movie;
-            String movieTitle = movieObject.get("Title").toString();
-            System.out.println(movieTitle);
+        if (movies.size() > 0) {
+            for (Object movie : movies) {
+                JSONObject movieObject = (JSONObject) movie;
+                String movieTitle = movieObject.get("Title").toString();
+                System.out.println(movieTitle);
+            }
+        } else {
+            System.out.println("There are not results for this movie");
         }
     }
 
