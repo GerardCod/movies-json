@@ -48,6 +48,10 @@ public class MovieFinder implements MovieReader {
         }
     }
 
+    /**
+     * Prints in console the list of movies' titles from the API.
+     * @param movies the list of movies.
+     */
     private void showTitles(JSONArray movies) {
         for (Object movie : movies) {
             JSONObject movieObject = (JSONObject) movie;
@@ -56,6 +60,11 @@ public class MovieFinder implements MovieReader {
         }
     }
 
+    /**
+     * Returns a secure connection with a resource from internet
+     * @param url the direction of the resource.
+     * @return HttpsURLConnection
+     */
     private HttpsURLConnection getConnection(String url) {
         HttpsURLConnection connection = null;
         try {
@@ -67,6 +76,12 @@ public class MovieFinder implements MovieReader {
         return connection;
     }
 
+    /**
+     * Builds an URL for the search of the movie.
+     * @param title the name of the movie.
+     * @param page the page number of the results.
+     * @return an URL
+     */
     private String buildURL(String title, Number page) {
         return "https://jsonmock.hackerrank.com/api/movies/search/?Title="+ title +"&page=" + page;
     }

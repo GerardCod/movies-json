@@ -34,11 +34,11 @@ public class DataParser {
         return (JSONObject) jsonParser.parse(builder.toString());
     }
 
+    /**
+     * Change the BufferedReader
+     * @param reader other BufferedReader
+     */
     public void setReader(BufferedReader reader) {
         this.reader = reader;
-    }
-
-    public JSONParser getJsonParser() {
-        return this.jsonParser;
     }
 }
