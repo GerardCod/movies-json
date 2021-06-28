@@ -31,6 +31,7 @@ public class DataParser {
         while ((line = reader.readLine()) != null) {
             builder.append(line);
         }
+        reader.close();
         return (JSONObject) jsonParser.parse(builder.toString());
     }
 
